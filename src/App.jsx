@@ -23,7 +23,6 @@ const App = () => {
   const [searchedImgs, setSearchedImgs] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
-  const [error, setError] = useState(null);
   const [status, setStatus] = useState(Status.IDLE);
 
   useEffect(() => {
@@ -38,7 +37,6 @@ const App = () => {
         setTotal(images.total);
         setStatus(Status.RESOLVED);
       } catch (error) {
-        setError(error);
         setStatus(Status.REJECTED);
       }
     }
